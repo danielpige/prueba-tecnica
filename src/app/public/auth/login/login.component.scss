@@ -1,0 +1,43 @@
+.container-login {
+  width: 100%;
+  height: 100vh;
+  // background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .login {
+    background-color: #DCDCEF;
+    width: 450px;
+    padding: 30px;
+    border-radius: 10px;
+
+    .title {
+
+      h1 {
+        font-weight: 300;
+        color: #090979;
+      }
+      div {
+        width: 70px;
+        height: 5px;
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+        border-radius: 5px;
+      }
+    }
+
+    button {
+      height: 45px!important;
+    }
+
+    .register-link {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      color: #090979;
+    }
+  }
+}
+

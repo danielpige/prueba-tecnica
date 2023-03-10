@@ -1,0 +1,13 @@
+<nav aria-label="...">
+  <ul class="pagination justify-content-center">
+    <li class="page-item" [ngClass]="{'disabled': prevPage === 0}">
+      <a (click)="goToPage(prevPage)" class="page-link">Anterior</a>
+    </li>
+    <li class="page-item" [ngClass]="{'active': currentPage === page}" *ngFor="let page of counterPages">
+      <a (click)="goToPage(page)" class="page-link">{{ page }}</a>
+    </li>
+    <li class="page-item" [ngClass]="{'disabled': nextPage === 0}">
+      <a (click)="goToPage(nextPage)" class="page-link" href="#">Siguiente</a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,23 @@
+.mat-mdc-table .mdc-data-table__header-row {
+  background-color: #DCDCEF!important;
+}
+
+.mat-mdc-table .mdc-data-table__row:hover {
+  background-color: #E9E9F3!important;
+}
+
+table {
+  border: 1px solid gray;
+  .icon {
+    cursor: pointer;
+  }
+  width: 100%;
+}
+
+.loader-container {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

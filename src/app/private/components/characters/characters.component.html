@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mt-2">
+      <mat-icon matTooltip="Cerrar" (click)="closeModal()" class="close">close</mat-icon>
+    </div>
+
+    <div class="col-md-12 title">
+      <h2>Listado de personajes de episodio <span>{{ data.episode.name }}</span></h2>
+      <mat-divider class="mt-2"></mat-divider>
+    </div>
+
+    <div class="col-md-12 mt-5" *ngIf="!loading">
+      <div class="row p-2">
+        <div class="col-md-4" *ngFor="let character of characters">
+          <app-character (refresh)="getFavorites()" [character]="character" ></app-character>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="loading" class="loader-container">
+      <div class="loader-table"></div>
+    </div>
+  </div>
+</div>

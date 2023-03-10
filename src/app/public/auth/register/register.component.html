@@ -1,0 +1,93 @@
+<div class="container-register">
+  <div class="register">
+    <div class="row">
+      <div class="col-md-12 title">
+        <h1>
+          Registro de usuario
+        </h1>
+        <div></div>
+      </div>
+      <div class="col-md-12 text">
+        <a [routerLink]="['/auth/login']">
+          <p>¿Ya estás registrado? Inicia sesión <span>aquí</span></p>
+        </a>
+      </div>
+      <form class="col-md-12 mt-3" (ngSubmit)="submit()" [formGroup]="registerForm">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="w-100 mt-4" appearance="outline">
+              <mat-label>Nombre</mat-label>
+              <input type="text" matInput placeholder="Nombre" formControlName="nombre">
+              <mat-error *ngIf="getControlInvalid('nombre')">
+                Este campo es requerido, mínimo 3 caracteres.
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field class="w-100 mt-4" appearance="outline">
+              <mat-label>Apellido</mat-label>
+              <input type="text" matInput placeholder="Apellido" formControlName="apellido">
+              <mat-error *ngIf="getControlInvalid('apellido')">
+                Este campo es requerido, mínimo 3 caracteres.
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field class="w-100 mt-4" appearance="outline">
+              <mat-label>Documento de identidad</mat-label>
+              <input type="string" matInput placeholder="Numero de documento" formControlName="doctoIdent">
+              <mat-error *ngIf="getControlInvalid('doctoIdent')">
+                Este es requerido, mínimo 6 caracteres y máximo 10.
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field class="w-100 mt-4" appearance="outline">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Correo electronico" formControlName="email">
+              <mat-error *ngIf="getControlInvalid('email')">
+                Ingresar un email valido, por favor.
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field class="w-100 mt-4" appearance="outline">
+              <mat-label>Contraseña</mat-label>
+              <input [type]="hide ? 'password' : 'text'" type="password" matInput placeholder="Contraseña" formControlName="clave">
+              <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="getControlInvalid('clave')">
+                Este campo requiere mínimo 6 caracteres.
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+            <mat-form-field class="w-100 mt-4" appearance="outline">
+              <mat-label>Confirmación de contraseña</mat-label>
+              <input [type]="hideConfirmation ? 'password' : 'text'" matInput placeholder="Confirmación de contraseña" formControlName="claveConfirmation">
+              <button type="button" mat-icon-button matSuffix (click)="hideConfirmation = !hideConfirmation" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirmation">
+                <mat-icon>{{hideConfirmation ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="getControlInvalid('claveConfirmation')">
+                Las contraseñas no coinciden.
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-12 mt-5">
+            <button class="w-100" type="submit" mat-raised-button color="primary">
+              <span *ngIf="!loading">Registrarse</span>
+              <span *ngIf="loading" class="loader"></span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+.signout {
+  cursor: pointer;
+}
+
+nav {
+  height: 80px!important;
+  background-color: #DCDCEF!important;
+
+  .navbar-brand {
+    font-size: 25px;
+    font-weight: 800;
+  }
+
+  #navbarNavDropdown {
+    justify-content: end;
+    ul {
+      li {
+        border-radius: 8px;
+        margin: 0 5px;
+        transition: .2s ease-in all;
+        a {
+          font-size: 20px;
+          color: #090979;
+        }
+
+        a.active {
+          font-weight: bold;
+
+        }
+      }
+
+      li.active {
+        background-color: white;
+        border-radius: 8px;
+      }
+
+      li:hover {
+        background-color: white;
+        // font-weight: bold;
+      }
+    }
+  }
+}

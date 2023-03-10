@@ -1,0 +1,55 @@
+mat-card {
+  // -webkit-box-shadow: 9px 10px 28px -5px rgba(9,9,121,1);
+  // -moz-box-shadow: 9px 10px 28px -5px rgba(9,9,121,1);
+  // box-shadow: 9px 10px 28px -5px rgba(9,9,121,1);
+
+}
+
+.favorite {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  color: gray;
+}
+
+.favorite.nofav {
+  color: gray;
+}
+
+.favorite.fav {
+  color: #FF0025;
+}
+
+.name {
+  text-align: center;
+  font-weight: 400;
+  color: #090979;
+  margin-bottom: 5px;
+}
+
+.bar {
+  display: block;
+  width: 100px;
+  height: 3px;
+  background-color: #090979;
+  border-radius: 5px;
+  margin: 0px auto;
+  margin-bottom: 10px;
+}
+
+.img-character {
+  border-radius: 8px;
+  border: 1px solid #090979;
+  margin-bottom: 10px;
+}
+
+.info {
+  padding-left: 25px;
+  .property {
+    font-weight: bolder;
+    font-size: 20px;
+    color: #090979;
+  }
+}

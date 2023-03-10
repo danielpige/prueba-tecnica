@@ -1,0 +1,51 @@
+.container-register {
+  width: 100%;
+  height: 100vh;
+  // background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .register {
+    background-color: #DCDCEF;
+    margin: 0 200px;
+    padding: 30px;
+    border-radius: 10px;
+
+    .title {
+
+      h1 {
+        font-weight: 300;
+        color: #090979;
+      }
+      div {
+        width: 70px;
+        height: 5px;
+        background: rgb(2,0,36);
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+        border-radius: 5px;
+      }
+    }
+
+    .text {
+      a {
+        text-decoration: none;
+        color: black;
+        p {
+          margin-top: 10px;
+          font-size: 20px;
+          font-weight: 400;
+          span {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    button {
+      height: 45px!important;
+    }
+  }
+}
+

@@ -1,0 +1,22 @@
+.close {
+  float: right;
+  cursor: pointer;
+}
+
+.container {
+  .title {
+    font-weight: 400;
+    color: #090979;
+    span {
+      font-weight: bolder;
+    }
+  }
+}
+
+.loader-container {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

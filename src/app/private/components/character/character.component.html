@@ -1,0 +1,36 @@
+<mat-card class="mt-3">
+  <mat-icon (click)="setFavorite()" [matTooltip]="character.favorite? 'Eliminar de favoritos' : 'Agregar a favoritos'" [ngClass]="{'fav': character.favorite, 'nofav': !character.favorite}" class="favorite">favorite</mat-icon>
+  <div class="row p-3">
+    <div class="col-md-12">
+      <h3 class="name">{{ character.name }}</h3>
+      <div class="bar"></div>
+    </div>
+    <div class="col-md-12">
+      <img [src]="character.image" class="img-fluid img-character d-block mx-auto" alt="">
+    </div>
+
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-12 info">
+          <span class="property">Origen:</span>&nbsp; <span class="value">{{ character.origin.name }}</span>
+        </div>
+
+        <div class="col-md-12 info">
+          <span class="property">Ubicación:</span>&nbsp; <span class="value">{{ character.location.name }}</span>
+        </div>
+
+        <div class="col-md-12 info">
+          <span class="property">Estado:</span>&nbsp; <span class="value">{{ character.status }}</span>
+        </div>
+
+        <div class="col-md-12 info">
+          <span class="property">Especie:</span>&nbsp; <span class="value">{{ character.species }}</span>
+        </div>
+
+        <div class="col-md-12 info">
+          <span class="property">Genero:</span>&nbsp; <span class="value">{{ character.gender }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>
