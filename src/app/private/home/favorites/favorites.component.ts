@@ -51,9 +51,21 @@ export class FavoritesComponent implements OnInit, OnDestroy {
   {
     // this.loading = true;
 
+    if (this.characterIds.length === 0) {
+      this.loading = false;
+      return;
+    }
+
     this.ramSvc.getCharactersByIds(this.characterIds).subscribe({
       next: (res) => {
-        this.characters = [...res].map(c => {
+
+        let data: CharacterResponse[] = [];
+        if (!Array.isArray(res)) {
+          data.push(res);
+        }else {
+          data = [...res];
+        }
+        this.characters = data.map(c => {
           const index: number = this.favorites.findIndex(f => f.id_caracter === c.id);
           if (index >= 0) {
             c.favorite = true;

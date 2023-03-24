@@ -1,0 +1,44 @@
+.title-notfound {
+  text-align: center;
+  font-weight: 700;
+  color: #123453;
+}
+
+img {
+  width: 250px;
+}
+
+.code {
+  font-size: 40px;
+  font-weight: 700;
+  color: #123453;
+}
+
+.code span.property {
+  color: #123453;
+}
+
+.code span.code-error {
+  color: #EA4C34;
+}
+
+.code span.message-error {
+  color: #7CA779;
+}
+
+
+.back {
+  text-align: center;
+}
+
+.back a {
+  text-decoration: none;
+  color: #123453;
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 900px) {
+  .code {
+    padding-left: 75px;
+  }
+}

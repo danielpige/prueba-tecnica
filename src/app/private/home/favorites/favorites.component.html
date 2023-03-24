@@ -9,6 +9,18 @@
       <div class="col-md-4" *ngFor="let character of characters">
         <app-character (refresh)="getFavorites()" [character]="character" ></app-character>
       </div>
+
+      <div class="col-md-12" *ngIf="characters.length === 0 && !loading">
+        <div class="nodata">
+          <div class="message">
+            <mat-icon>error</mat-icon> No hay información para mostrar.
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <div *ngIf="loading" class="loader-container">
+    <div class="loader-table"></div>
   </div>
 </div>

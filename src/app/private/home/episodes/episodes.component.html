@@ -5,31 +5,23 @@
     <mat-divider class="mt-2"></mat-divider>
   </div>
 
-  <div class="col-md-8 my-5 mx-auto" *ngIf="!loading">
+  <div class="col-md-8 my-5 mx-auto" *ngIf="!loading && episodes.length !== 0">
     <table mat-table [dataSource]="episodes">
-
-      <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
-
-      <!-- Position Column -->
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> Nombre </th>
         <td mat-cell *matCellDef="let element"> {{element.name}} </td>
       </ng-container>
 
-      <!-- Name Column -->
       <ng-container matColumnDef="episode">
         <th mat-header-cell *matHeaderCellDef> Episodio </th>
         <td mat-cell *matCellDef="let element"> {{element.episode}} </td>
       </ng-container>
 
-      <!-- Weight Column -->
       <ng-container matColumnDef="air_date">
         <th mat-header-cell *matHeaderCellDef> Fecha al aire </th>
         <td mat-cell *matCellDef="let element"> {{element.air_date}} </td>
       </ng-container>
 
-      <!-- Symbol Column -->
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> Acciones </th>
         <td mat-cell *matCellDef="let element">
@@ -41,7 +33,15 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   </div>
-  <div class="col-md-12" *ngIf="!loading">
+
+  <div class="col-md-12 mx-5 mt-5" *ngIf="episodes.length === 0 && !loading">
+    <div class="nodata">
+      <div class="message">
+        <mat-icon>error</mat-icon> No hay información para mostrar.
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12" *ngIf="!loading && episodes.length !== 0">
     <app-pagination (changePage)="goToPage($event)" [totalPages]="totalPages" [currentPage]="page" [nextPage]="nextPage" [prevPage]="prevPage" ></app-pagination>
   </div>
   <div *ngIf="loading" class="loader-container">
